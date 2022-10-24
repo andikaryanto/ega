@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmployeesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,3 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::patch('settings', [\App\Http\Controllers\SettingsController::class, 'update']);
+Route::prefix('employee')->group(function(){
+    Route::post('/create', [EmployeesController::class, 'create']);
+});
