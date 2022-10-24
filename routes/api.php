@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EmployeesController;
+use App\Http\Controllers\OvertimesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::patch('settings', [\App\Http\Controllers\SettingsController::class, 'update']);
-Route::prefix('employee')->group(function(){
-    Route::post('/create', [EmployeesController::class, 'create']);
+Route::prefix('employees')->group(function(){
+    Route::post('', [EmployeesController::class, 'create']);
+});
+Route::prefix('overtimes')->group(function(){
+    Route::post('', [OvertimesController::class, 'create']);
 });
