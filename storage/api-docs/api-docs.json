@@ -1,0 +1,73 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Contoh API documentation",
+        "description": "Contoh API doc menggunakan OpenAPI/Swagger",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "email": "@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/settings": {
+            "patch": {
+                "tags": [
+                    "setting"
+                ],
+                "summary": "Update an existing setting.",
+                "description": "",
+                "operationId": "0fbef5dff3c16f8b51591c8ecb049d57",
+                "requestBody": {
+                    "description": "",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateSettingRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Validation Exeption"
+                    },
+                    "400": {
+                        "description": "Validation Exeption"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "UpdateSettingRequest": {
+                "title": "UpdateSettingRequest",
+                "description": "Update Setting",
+                "properties": {
+                    "key": {
+                        "title": "Key",
+                        "description": "",
+                        "type": "string",
+                        "example": "overtime_method"
+                    },
+                    "value": {
+                        "title": "Value",
+                        "description": "",
+                        "type": "string",
+                        "example": "1"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "UpdateSetting"
+                }
+            }
+        }
+    }
+}
